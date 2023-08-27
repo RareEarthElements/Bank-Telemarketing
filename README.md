@@ -68,6 +68,7 @@ This dataset has imbalance dataset characteristics, because the label is dominat
 * There are 14.22% of customers who made deposits even though the previous marketing campaign was considered a failure to make deposits. Meanwhile, there are 34.88% of customers who are considered successful in making deposits in the previous marketing campaign but are no longer depositing.
 
 **Machine Learning Method**
+
 The dataset has a considerable difference between the amount of data for class 1 and 0, since the model will easily predict class 0, thus giving a high accuracy value, therefore that the accuracy metric cannot be used as the main metric because in this case, but still used as an additional metric for model quality preservation. Instead we will prioritize the use of ROC-AUC metric as the ROC-AUC metric is a value obtained by taking into account the true positive rate (TP / TP + FN) and false positive rate (FP / FP + TN) where the selection of this metrics is very suitable for the imbalanced dataset. **The ROC-AUC score that is closer to 1 means that the model is getting better at distinguishing the class 1 (customer makes a deposit) and 0 (customer does not make a deposit).** For the metrics used in the classification report, there are precision, recall, and f1-score.
 
                 precision    recall  f1-score   support
