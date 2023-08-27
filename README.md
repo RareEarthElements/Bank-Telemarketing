@@ -36,7 +36,7 @@ The goal is for the bank to identify the ideal customer characteristics for targ
 Our approach involves analyzing data to identify potential depositor groups and constructing a classification model. This model will aid the bank in predicting the probability that a customer will make a deposit.
 
 
-**5Metrics**
+**Metrics**
 
    1. Accuracy: in this context would measure the overall correctness of the model's predictions. It tells us how often the model correctly predicts both customers who will and will not make a deposit. However, if the dataset has imbalanced classes (more of one class than the other), high accuracy might be misleading as the model could simply predict the majority class.
 
@@ -49,3 +49,22 @@ Our approach involves analyzing data to identify potential depositor groups and 
    5. ROC-AUC Curve: is a graphical representation of the trade-off between Sensitivity (Recall) and Specificity (1 - False Positive Rate). A model with a high ROC-AUC value indicates that it's effective in distinguishing between customers who will and will not make a deposit.
 
 In summary, for this classification task, we want to maximize Recall to capture as many potential depositors as possible, while maintaining a reasonable level of Precision to avoid wasting resources on customers who are unlikely to make a deposit. The F1-Score provides a balanced view, and the ROC-AUC Curve gives insights into the overall discriminatory power of the model.
+
+**Imbalance Dataset**
+This dataset has imbalance dataset characteristics, because the label is dominated by one of the unique values, in column of the target, the proportion of unique value 'no' is very high compared to unique value 'yes'. In the machine learning stage, a treatment will be applied to overcome the imbalance problem in the dataset.
+
+**Data Analytics**
+* Customers who are still students and are under 26 years old and customers who are retired and aged 70 years and over tend to make deposits.
+* Customers who have no study certificate tend to be dominant in making deposits.
+* Single customers show higher deposit propensity compared to married or divorced individuals
+* Homeowners and non-homeowners appear to have the same propensity to deposit.
+* Customers who have loans and do not have loans appear to have the same tendency to deposit.
+* Customers who are not defaulted tend to be more interested in depositing.
+* The observed marketing technique has the highest number of customers who make deposits ranging from 1-4 contacts.
+* It can be seen that if there is no contact before the campaign is carried out, the results show a dominant result in customers who make a deposit.
+* Customers have a tendency to deposit if there is an interval of more than 25 days since the last contact.
+* The proportion of depositor customers is more dominant if they were contacted using cellular.
+* There are months that are the last month customers were contacted which have a proportion of customers who tend to deposit, these months in particular include March, September, October, and December.
+* There are 14.22% of customers who made deposits even though the previous marketing campaign was considered a failure to make deposits. Meanwhile, there are 34.88% of customers who are considered successful in making deposits in the previous marketing campaign but are no longer depositing.
+
+**Machine Learning Method**
