@@ -52,7 +52,7 @@ In summary, for this classification task, we want to maximize Recall to capture 
 
 **Imbalance Dataset**
 
-This dataset has imbalance dataset characteristics, because the label is dominated by one of the unique values, in column of the target, the proportion of unique value 'no' is very high compared to unique value 'yes'. In the machine learning stage, a treatment will be applied to overcome the imbalance problem in the dataset.
+This dataset has the characteristics of an unbalanced dataset, because the label is dominated by one unique value, in the target column, the proportion of unique 'no' values is 88.7%, while the unique 'yes' value is only 11.3%. In the machine learning stage, oversampling treatment will be applied to overcome the imbalance problem in the dataset.
 
 **Data Analytics**
 
