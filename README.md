@@ -76,5 +76,5 @@ The dataset has a considerable difference between the amount of data for class 1
          1.0       0.49      0.82      0.61       928
 
     accuracy                           0.88      8234
-   macro avg       0.73      0.86      0.77      8234
-weighted avg       0.92      0.88      0.90      8234
+    macro avg      0.73      0.86      0.77      8234
+    weighted avg   0.92      0.88      0.90      8234
