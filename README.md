@@ -71,12 +71,36 @@ This dataset has imbalance dataset characteristics, because the label is dominat
 
 The dataset has a considerable difference between the amount of data for class 1 and 0, since the model will easily predict class 0, thus giving a high accuracy value, therefore that the accuracy metric cannot be used as the main metric because in this case, but still used as an additional metric for model quality preservation. Instead we will prioritize the use of ROC-AUC metric as the ROC-AUC metric is a value obtained by taking into account the true positive rate (TP / TP + FN) and false positive rate (FP / FP + TN) where the selection of this metrics is very suitable for the imbalanced dataset. **The ROC-AUC score that is closer to 1 means that the model is getting better at distinguishing the class 1 (customer makes a deposit) and 0 (customer does not make a deposit).** For the metrics used in the classification report, there are precision, recall, and f1-score.
 
+From the evaluation results for the best model chosen is GradientBoostingClassifier. The treatment to overcome data imbalance with SMOTE technique and hyperparameter tuning has successfully improved the performance of the GradientBoostingClassifier model. The following is the metrics report of the best model, GradientBoostingClassifier, which has been optimized through the hyperparameter tuning process:
+
+
                 precision    recall  f1-score   support
 
-         0.0       0.98      0.89      0.93      7306
-         1.0       0.49      0.82      0.61       928
+         0.0       0.97      0.91      0.94      7306
+         1.0       0.52      0.78      0.63       928
 
-    accuracy                           0.88      8234
-    macro avg      0.73      0.86      0.77      8234
-    weighted avg   0.92      0.88      0.90      8234
+    accuracy                           0.89      8234
+    macro avg      0.75      0.85      0.78      8234
+    weighted avg   0.93      0.89      0.90      8234
               
+The ROC-AUC value of the tuned GradientBoostingClassifier model is 0.8455163800183128.
+
+Our model has a prediction accuracy of prospective customers who deposit 52% (precision), so every time our model predicts that a prospective customer to deposit, the probability of guessing is correct is 52% or less. The 52% for predicting class 1 from imbalanced data indicates the weakness of the model, because it still makes a lot of minority class prediction errors. It turns out that the factors that most influence customers to deposit are external things that cannot be anticipated by banks, although there are still some factors that banks can actually handle. If with the scenario the allocation of funds for marketing campaigns is 100,000 USD to target 20,000 prospective customers, with the machine learning model the bank only needs to prepare operational costs of 43,500 USD so that it can save 56.5% of funds for marketing campaigns.
+
+  **Recommended action**
+  
+  * To increase the number of potential customers to deposit which will increase revenue to the bank, the bank should make contact with potential customers according to the personal characteristics of the customer. Based on the consideration of the data analysis, the characteristics of potential customers are those who are in the age range below 26 years and above 70 years, are students and retirees, are not in default, and if based on the results of the evaluation of feature importance, potential customers are those who own a house and have a loan.
+
+  * To enhance the success in getting customers who deposit banks need to contact 1-4 times recommended using cellular, and need to have an interval of one month if the first contact is not successful, as for contacting it should be done in March, September, October, and December because most customers have a tendency to deposit if last contacted in these months. There should be no need for contacting before the marketing campaign. Banks can also try to re-contact customers who previously did not deposit in the previous marketing campaign, because there are 14.22% of customers who were previously considered unsuccessful finally made deposits afterwards.
+  
+  * If seen from the personal characteristics of customers, the bank should offer the benefits of deposits such as interest or investment programmes for students or prospective customers who are still in the early career stage as a facility to provide additional income to them. As for the benefits that can be offered to potential customers above 70 years old, offering a higher deposit rate than the usual, especially for customers aged 70 years and above and retired, can be a great incentive for those who are looking for ways to optimise their savings.
+  
+  **Possible future research**
+  
+  * In the future, further analysis can be carried out regarding what factors make customers who were initially not interested in depositing during the previous marketing campaign until they become interested in depositing.
+
+  **Complete the dataset**
+
+  * The need to update the database, especially for the default and poutcome features to increase data validity because there are still customers who do not reveal whether they are default or not and to ascertain whether the customer was previously considered a failure or success after receiving a previous marketing campaign.
+
+  * The addition of new features to the dataset that can be related to the interest of prospective customers to make deposits, for example, such as deposit interest data, will help marketing strategies to offer concrete benefits to prospective customers to get more customers.
