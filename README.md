@@ -51,9 +51,11 @@ Our approach involves analyzing data to identify potential depositor groups and 
 In summary, for this classification task, we want to maximize Recall to capture as many potential depositors as possible, while maintaining a reasonable level of Precision to avoid wasting resources on customers who are unlikely to make a deposit. The F1-Score provides a balanced view, and the ROC-AUC Curve gives insights into the overall discriminatory power of the model.
 
 **Imbalance Dataset**
+
 This dataset has imbalance dataset characteristics, because the label is dominated by one of the unique values, in column of the target, the proportion of unique value 'no' is very high compared to unique value 'yes'. In the machine learning stage, a treatment will be applied to overcome the imbalance problem in the dataset.
 
 **Data Analytics**
+
 * Customers who are still students and are under 26 years old and customers who are retired and aged 70 years and over tend to make deposits.
 * Customers who have no study certificate tend to be dominant in making deposits.
 * Single customers show higher deposit propensity compared to married or divorced individuals
@@ -70,6 +72,10 @@ This dataset has imbalance dataset characteristics, because the label is dominat
 **Machine Learning Method**
 
 The dataset has a considerable difference between the amount of data for class 1 and 0, since the model will easily predict class 0, thus giving a high accuracy value, therefore that the accuracy metric cannot be used as the main metric because in this case, but still used as an additional metric for model quality preservation. Instead we will prioritize the use of ROC-AUC metric as the ROC-AUC metric is a value obtained by taking into account the true positive rate (TP / TP + FN) and false positive rate (FP / FP + TN) where the selection of this metrics is very suitable for the imbalanced dataset. **The ROC-AUC score that is closer to 1 means that the model is getting better at distinguishing the class 1 (customer makes a deposit) and 0 (customer does not make a deposit).** For the metrics used in the classification report, there are precision, recall, and f1-score.
+
+**Model Selection**
+
+There are three models that are quite stable, namely decision tree, gradient boosting, XGBRF. Decision tree will not be selected for optimization because its ROC-AUC score is lower than gradient boosting and XGBRF models. The two models have similar characteristics, but XGBRF has a lower f-1 score and accuracy than gradient boosting, so the model chosen for optimization is the **gradient boosting** model.
 
 From the evaluation results for the best model chosen is GradientBoostingClassifier. The treatment to overcome data imbalance with SMOTE technique and hyperparameter tuning has successfully improved the performance of the GradientBoostingClassifier model. The following is the metrics report of the best model, GradientBoostingClassifier, which has been optimized through the hyperparameter tuning process:
 
